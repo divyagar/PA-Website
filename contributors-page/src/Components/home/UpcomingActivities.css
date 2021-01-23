@@ -18,6 +18,7 @@ div.event {
   /* padding: 0px 10px; */
   /* border: 1px solid; */
   display: inline-block;
+  outline: none;
 }
 
 div.event h4 {

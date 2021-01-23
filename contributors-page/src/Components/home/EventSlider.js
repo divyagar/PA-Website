@@ -7,6 +7,26 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
 export default function EventSlider(props) {
+  // const numOfSlides = props.numOfSlides;
+  const numOfSlides = 7;
+  const [slidesToShow, changeSlidesToShow] = useState(4.3);
+  const [stopAt, changeStopAt] = useState("2.7");
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+  }, []);
+
+  const handleResize = () => {
+      if(window.innerWidth <= 563){
+        changeSlidesToShow(2.6);
+        changeStopAt(4.4);
+      }
+      else{
+        changeSlidesToShow(4.3);
+        changeStopAt(2.7);
+      }
+  };
+
   const customSlider = useRef()
   const next = () => {
     customSlider.current.slickNext();
@@ -21,7 +41,7 @@ export default function EventSlider(props) {
     // adaptiveHeight: true,
     // variableWidth: true,
     infinite: false,
-    slidesToShow: 4.3,
+    slidesToShow: slidesToShow,
     slidesToScroll: 1,
     vertical: false,
     verticalSwiping: false,
@@ -145,7 +165,7 @@ export default function EventSlider(props) {
         </Slider>
         <br/>
       </div>
-      <button className="event-next-button" disabled = {slideNum == 2.7} onClick={() => next()}>
+      <button className="event-next-button" disabled = {slideNum == stopAt} onClick={() => next()}>
         <i class="fas fa-chevron-right"></i>
       </button>
     </div>

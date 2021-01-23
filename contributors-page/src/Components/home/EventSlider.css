@@ -13,7 +13,7 @@ div.event-slider .slick-slide>div {
 div.event-slider .slick-list {
   padding: 10px 0px 10px 10px;
   border-radius: 10px;
-  margin: 0px -5px;
+  margin: 0px -8px;
   /* border: 1px solid; */
 }
 
@@ -64,3 +64,10 @@ div.event-slider button.event-next-button {
 /* div.event-slider button.event-prev-button:disabled button.event-next-button:disabled {
   background-color: #5877a8;
 } */
+
+/* height : 150px;
+width : 120px;
+height : 85px;
+font-size : 10px;
+font-size: 8px;
+906px; */

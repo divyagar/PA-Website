@@ -1,4 +1,4 @@
-import React, {useRef, useEffect} from "react";
+import React, {useRef, useEffect, useState} from "react";
 import './SliderTutorial.css'
 
 import "slick-carousel/slick/slick.css";
@@ -7,6 +7,25 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
 export default function SliderTutorial(props) {
+  const [slidesToShow, changeSlidesToShow] = useState(5);
+  const [sliderWidth, changeSliderWidth] = useState("21vw");
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+  }, []);
+
+  const handleResize = () => {
+    if(window.innerWidth <= 759){
+      changeSlidesToShow(4);
+      changeSliderWidth("25vw");
+      console.log(sliderWidth);
+    }
+    else{
+      changeSlidesToShow(5);
+      changeSliderWidth("21vw");
+    }
+  }
+
   const customSlider = useRef()
   const next = () => {
     customSlider.current.slickNext();
@@ -18,7 +37,7 @@ export default function SliderTutorial(props) {
   var settings = {
     focusOnSelect: true,
     infinite: true,
-    slidesToShow: 5,
+    slidesToShow: slidesToShow,
     slidesToScroll: 1,
     vertical: true,
     verticalSwiping: true,
@@ -41,7 +60,7 @@ export default function SliderTutorial(props) {
     ));
 
   return (
-    <div class = "topics-slider">
+    <div class = "topics-slider" style = {{width: sliderWidth}}>
       <div className="newApp">
         <Slider {...settings} ref = {customSlider}>
           {

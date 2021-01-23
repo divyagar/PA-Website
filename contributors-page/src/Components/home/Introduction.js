@@ -1,5 +1,6 @@
 import React from 'react'
 import './Introduction.css'
+// import PaFeatures from './PaFeatures'
 
 function Introduction() {
     return (
@@ -23,6 +24,7 @@ function Introduction() {
             </div>
 
             <div id = "pa-features">
+                {/* <PaFeatures /> */}
                 <div class = "feature">
                     <div class = "feature-img"></div>
                     <div class = "feature-text">

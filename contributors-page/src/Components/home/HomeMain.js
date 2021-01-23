@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import Introduction from './Introduction'
 import ArticlesSection from './ArticlesSection'
-import SliderTutorial from './SliderTutorial'
 import UpcomingActivities from './UpcomingActivities'
 
 function HomeMain() {

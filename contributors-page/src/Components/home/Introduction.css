@@ -20,7 +20,7 @@
 #welcome-msg {
   /* border: 1px solid; */
   width: 40vw;
-  margin: 140px 0px;
+  margin: 8.5vw 0px 4vw;
   text-align: left;
   padding: 20px;
 }
@@ -42,14 +42,14 @@
 #welcome-msg div.text .lines {
   margin: 10px 0px;
   padding-right: 20px;
-  line-height: 28px;
+  line-height: 2vw;
   font-size: 1.7vw;
   font-weight: 600;
 }
 
 #welcome-msg div.search {
   border: 3px solid #0f2f63;
-  margin: 30px 10px 0px 0px;
+  margin: 2.2vw 0.8vw 0px 0px;
   border-radius: 20px;
   height: 4vw;
   position: relative;
@@ -63,6 +63,8 @@
   border: none;
   padding: 2px 3.5vw 0px 10px;
   font-size: 1.5vw;
+  position: absolute;
+  left: 0;
 }
 
 #welcome-msg div.search input:focus {
@@ -130,6 +132,7 @@
   margin: 10px auto 1.5vw;
 }
 
+
 #introduction #arrow {
   width: 5vw;
   height: 5vw;
@@ -145,4 +148,77 @@
   justify-content: center;
   color: white;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 770px) {
+  #welcome-msg {
+    margin: 6vw 0px;
+  }
+}
+
+@media only screen and (max-width: 548px) {
+  #introduction {
+    background-image: url("introduction-andoid.jpg");
+    background-size: contain;
+    box-shadow: none;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    padding: 2px !important;
+  }
+
+  #introduction #welcome-msg {
+    margin-top: 60px;
+    text-align: center;
+    width: 100%;
+    padding: 0px;
+  }
+
+  div.text .welcome {
+    font-size: 4vw !important;
+  }
+
+  div.text .name {
+    font-size: 8vw !important;
+    color: white;
+  }
+
+  div.lines {
+    font-size: 4vw !important;
+    padding: 0px 40px;
+    line-height: 4vw !important;
+  }
+
+  div.search {
+    margin: 0px 20px !important;
+    border: 1px solid #0f2f63 !important;
+    height: 6vw !important;
+    border-radius: 5px !important;
+  }
+
+  div.search input {
+    border-radius: 5px !important;
+    font-size: 3vw !important;
+    padding: 0px 2vw !important;
+    /* padding: 0px !important;
+    margin: 0px !important; */
+  }
+
+  div.search input::-webkit-input-placeholder {
+    font-size: 3vw !important;
+  }
+
+  div.search button {
+    border-radius: 5px !important;
+  }
+
+  #introduction #arrow {
+    display: none;
+  }
+
+  #pa-features {
+    border: 1px solid;
+    margin-top: 80vw;
+  }
+
+
 }

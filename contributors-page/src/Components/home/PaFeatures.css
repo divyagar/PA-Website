@@ -1,0 +1,65 @@
+#pa-features {
+  border: 1px solid;
+  display: flex;
+  justify-content: space-evenly;
+  /* align-items: center; */
+  /* padding: 1.5vw; */
+}
+
+#pa-features div.feature {
+  /* border: 1px solid; */
+  width: 17vw;
+  border-radius: 25px;
+  box-shadow: 0px 0px 4px 5px rgb(226, 226, 226);
+  outline: none;
+  /* margin: 0px 20px; */
+}
+
+#pa-features div.feature .feature-img {
+  height: 10vw;
+  /* border: 1px solid; */
+  width: 10vw;
+  margin: 1.5vw auto;
+  border-radius: 50%;
+  background-color: #ffdf75;
+}
+
+#pa-features div.feature .feature-text h6 {
+  font-size: 1.5vw;
+  /* border: 1px solid; */
+  margin: 0px;
+}
+
+#pa-features div.feature .feature-text .text {
+  padding: 0px 20px;
+  font-size: 1.3vw;
+  line-height: 1.5vw;
+  margin: 10px auto 1.5vw;
+}
+
+#pa-features .slick-slide {
+  /* border: 1px solid; */
+  width: 17vw;
+  margin: 0.8vw;
+  margin: 0.8vw 5.1vw;
+}
+
+#pa-features .slick-list {
+  margin: -0.8vw -5.1vw;
+}
+
+#pa-features .slick-slide:nth-child(2) {
+  /* margin: 0.8vw 5.1vw; */
+
+}
+
+#pa-features .slick-slider {
+  /* border: 1px solid; */
+  display: flex;
+  align-items: center;
+}
+
+
+#pa-features .slick-slide {
+  /* border: 1px solid; */
+}
