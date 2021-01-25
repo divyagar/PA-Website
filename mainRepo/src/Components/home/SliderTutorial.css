@@ -57,10 +57,23 @@ div.topics-slider button.next-button {
   bottom: 1.2vw;
 }
 
+div.topics-slider button.prev-button .fas {
+  margin-top: -0.7vw;
+}
+
 div.topics-slider button.next-button .fas {
   margin-top: -1.5vw;
 }
 
-div.topics-slider button.prev-button .fas {
-  margin-top: -0.7vw;
+@media only screen and (max-width: 759px) {
+
+  div.topics-slider button.prev-button,
+  button.next-button {
+    left: 10vw;
+  }
+
+  div.topics-slider button.next-button {
+    bottom: 3vw;
+  }
+
 }

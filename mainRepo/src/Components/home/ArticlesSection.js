@@ -25,7 +25,7 @@ function ArticlesSection() {
 
     return (
         <div id = "articles-section">
-            <h2>Articles</h2>
+            <h2 class = "section-heading">Articles</h2>
             <div class = "content" style = {{height: contentHeight}}>
                 <div class = "left-section">
                     <SliderTutorial change = {changeDiv} content = {content}/>

@@ -1,6 +1,6 @@
 import React from 'react'
 import './Introduction.css'
-// import PaFeatures from './PaFeatures'
+import PaFeatures from './PaFeatures'
 
 function Introduction() {
     return (
@@ -23,32 +23,7 @@ function Introduction() {
                 </div>
             </div>
 
-            <div id = "pa-features">
-                {/* <PaFeatures /> */}
-                <div class = "feature">
-                    <div class = "feature-img"></div>
-                    <div class = "feature-text">
-                        <h6>Feature Name</h6>
-                        <div class = "text">Some features of programmers army</div>
-                    </div>
-                </div>
-                
-                <div class = "feature">
-                    <div class = "feature-img"></div>
-                    <div class = "feature-text">
-                        <h6>Feature Name</h6>
-                        <div class = "text">Some features of programmers army</div>
-                    </div>
-                </div>
-                
-                <div class = "feature">
-                    <div class = "feature-img"></div>
-                    <div class = "feature-text">
-                        <h6>Feature Name</h6>
-                        <div class = "text">Some features of programmers army</div>
-                    </div>
-                </div>
-            </div>
+            <PaFeatures />
             <a href = "#articles-section">
                 <div id = "arrow">
                     <i class="fas fa-chevron-down"></i>

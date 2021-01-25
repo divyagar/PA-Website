@@ -36,7 +36,7 @@ export default function SliderTutorial(props) {
 
   var settings = {
     focusOnSelect: true,
-    infinite: true,
+    infinite: false,
     slidesToShow: slidesToShow,
     slidesToScroll: 1,
     vertical: true,
