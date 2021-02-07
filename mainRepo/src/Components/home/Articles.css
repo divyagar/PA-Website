@@ -116,9 +116,9 @@ div.article:nth-child(6) {
 } */
 
 div.right-section div.filter-section {
-  padding: 10px 20px;
+  padding: 0.8vw 1.5vw;
   position: absolute;
-  top: -40px;
+  top: -2.9vw;
   right: 0;
   z-index: 20000;
   /* border: 1px solid; */
@@ -130,28 +130,36 @@ div.filter-section div.filter-image {
 
 div.filter-image img {
   cursor: pointer;
+  width: 3.6vw;
+  height: 3.6vw;
 }
 
 div.filter-section .filter-form {
   display: none;
   /* border: 1px solid; */
-  width: 250px;
+  width: 18.3vw;
   background: white;
   text-align: left;
-  padding: 20px;
+  padding: 1.5vw;
 }
 
 div.filter-form h3 {
-  font-size: 30px;
+  font-size: 2.1vw;
   margin: 0px;
   padding: 0;
 }
 
 div.filter-form div.criteria {
-  margin: 20px 0px 0px;
+  margin: 1.5vw 0px 0px;
   display: flex;
   justify-content: space-between;
   font-weight: 600;
+  font-size: 1.2vw;
+}
+
+div.criteria input {
+  width: 1.1vw;
+  height: 1.1vw;
 }
 
 div.criteria input:before {
@@ -168,13 +176,14 @@ div.criteria input:checked:before {
 }
 
 div.filter-form div.submit-btn {
-  margin: 20px 0px 0px;
+  margin: 1.5vw 0px 0px;
   text-align: right;
 }
 
 div.submit-btn button {
   border: none;
   background: #5ef2a3;
-  padding: 2px 15px;
+  padding: 0.1vw 1.1vw;
   cursor: pointer;
+  font-size: 1.2vw;
 }

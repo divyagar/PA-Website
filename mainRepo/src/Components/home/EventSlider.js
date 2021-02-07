@@ -1,32 +1,37 @@
+// component that contains slider of all events
+
 import React, {useRef, useEffect, useState} from "react";
 import './EventSlider.css'
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
 import Slider from "react-slick";
 import axios from "axios";
 
 export default function EventSlider(props) {
-  // const numOfSlides = props.numOfSlides;
-  const numOfSlides = 7;
+  // variable that stores maximum number of slides to show at a time.
+  // This is changed with the change of browser size
   const [slidesToShow, changeSlidesToShow] = useState(4.3);
-  const [stopAt, changeStopAt] = useState("2.7");
-  const [data, changeData] = useState([])
-  const [datetoPrint, updateDate] = useState(Date.now())
 
+  // variable that helps slider to stop at end point 
+  const [stopAt, changeStopAt] = useState("2.7");
+
+  // object array that will store information of all webinars and contests
+  const [data, changeData] = useState([])
+
+  // variable that stores index of current slide
+  const [slideNum, setSlideNum] = useState(0);
+
+  // fetching data of webinar and contest and stores in data array
   useEffect(() => {
     window.addEventListener('resize', handleResize);
     var url = "https://programmers-army-dev-backend.herokuapp.com/api/webinar/all"
     axios.get(url)
     .then(res => {
-      console.log(res.data.webinar)
       changeData([])
       Object.keys(res.data.webinar).forEach(key => changeData(arr => [...arr, res.data.webinar[key]]))
       url = "https://programmers-army-dev-backend.herokuapp.com/api/contest/all"
       axios.get(url)
       .then(res => {
-        console.log(res.data.contest)
         Object.keys(res.data.contest).forEach(key => changeData(arr => [...arr, res.data.contest[key]]))
       })
       .catch(err => {
@@ -38,9 +43,8 @@ export default function EventSlider(props) {
     })
   }, []);
 
+  // sorting event of the basis of date
   useEffect(() => {
-    console.log("data:", data)
-
     data.sort(function(a, b){
       var date1 = "", date2 = ""
 
@@ -64,12 +68,11 @@ export default function EventSlider(props) {
         date2 = new Date(date2[0], date2[1] - 1, date2[2])
       }
 
-      console.log(date1.getMonth())
-
       return date2 - date1
     })
   }, [data])
 
+  // function that changes slides to show and stop at variable with change in browser size
   const handleResize = () => {
       if(window.innerWidth <= 563){
         changeSlidesToShow(2.6);
@@ -81,6 +84,7 @@ export default function EventSlider(props) {
       }
   };
 
+  // reference of slider
   const customSlider = useRef()
   const next = () => {
     customSlider.current.slickNext();
@@ -89,36 +93,19 @@ export default function EventSlider(props) {
     customSlider.current.slickPrev();
   }
 
-  const [slideNum, setSlideNum] = useState(0);
-
   var settings = {
-    // adaptiveHeight: true,
-    // variableWidth: true,
     infinite: false,
     slidesToShow: slidesToShow,
     slidesToScroll: 1,
     vertical: false,
     verticalSwiping: false,
     swipeToSlide: true,
-    beforeChange: function(currentSlide, nextSlide) {
-      console.log("before change", currentSlide, nextSlide);
-    },
     afterChange: function(currentSlide) {
-      console.log("after change", currentSlide);
-      console.log(customSlider.current);
       setSlideNum(currentSlide)
     }
-  };
-  
-  // const renderSlides = () =>
-  //   props.content.map(cont => (
-  //     <div className = "slider-element">
-  //       <h3>{cont}</h3>
-  //     </div>
-  //   ));
+  };  
 
-  
-
+  // function to create html content from webinars and contest data
   const allEvents = () => {
     var events = []
     for(var i = 0; i<data.length; i++){
@@ -127,9 +114,7 @@ export default function EventSlider(props) {
           <div className = "event">
             <h4>Webinar</h4>
             <div className = "event-content">
-              {/* <div className = "event-image"> */}
-                <img src = {data[i].picture} class = "event-image"/>
-              {/* </div> */}
+              <img src = {data[i].picture} class = "event-image"/>
               <div className = "event-text">
                 <h5>{data[i].title}</h5>
                 <div className = "event-date">
@@ -167,12 +152,12 @@ export default function EventSlider(props) {
         <i class="fas fa-chevron-left"></i>
       </button>
       <div className="eventApp">
-        <Slider {...settings} ref = {customSlider}>
 
+        {/* main slider that contains information of events */}
+        <Slider {...settings} ref = {customSlider}>
           {
             allEvents()
           }
-        
         </Slider>
         <br/>
       </div>
